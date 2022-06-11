@@ -1,0 +1,24 @@
+﻿@typeparam T
+
+@Header
+
+@foreach (var element in List)
+{
+    @ElementTemplate(element)
+}
+
+@Footer
+
+@code {
+    [Parameter]
+    public List<T> List { get; set; }
+
+    [Parameter]
+    public RenderFragment<T> ElementTemplate { get; set; }
+
+    [Parameter]
+    public RenderFragment Header { get; set; }
+
+    [Parameter]
+    public RenderFragment Footer { get; set; }
+}
